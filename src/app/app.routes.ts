@@ -8,6 +8,8 @@ export const routes: Routes = [
   { path: 'events', component: EventList },
   { path: 'schedule', component: ScheduleEvent },
   { path: 'rsvp', component: RsvpForm },
-  { path: 'rsvp/:id', component: RsvpForm }
-
+  { path: 'rsvp/:id', component: RsvpForm },
+  // wildcard route for 404 errors
+  // any invalid URL redirects to dashboard
+  { path: '**', redirectTo: '/events' }
 ];

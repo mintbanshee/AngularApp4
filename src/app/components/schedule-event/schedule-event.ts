@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, FormGroupDirective, Validators } from '@angular/forms';
 import { EventService } from '../../services/event';
 import { guestCapacityValidator } from '../../validators/guest-capacity.validator';
+import { dateRangeValidator } from '../../validators/date-range.validator';
 import { DialogComponent } from '../dialog/dialog';
 
 // material imports
@@ -85,7 +86,9 @@ export class ScheduleEvent implements OnInit {
           eventDescription: ['', [Validators.required, Validators.minLength(10)]],
           notes: [''],
           depositPaid: [false]
-      },
+      }, {
+        validators: dateRangeValidator()
+      }
     );
   }
 

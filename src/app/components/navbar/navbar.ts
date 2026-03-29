@@ -10,4 +10,5 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.css'],
 })
+
 export class NavbarComponent {}

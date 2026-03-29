@@ -60,3 +60,9 @@ mat-card-subtitle {
   height: 50px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+.dateError {
+  color: #b3261e;
+  font-size: 0.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}

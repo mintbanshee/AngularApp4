@@ -51,6 +51,32 @@
       "notes": "- we set up tables and tents\n- simple spring decorations\n- night market, put up the fairy lights",
       "depositPaid": false,
       "id": "jfqEdDC0XuM"
+    },
+    {
+      "hostName": "Final Test",
+      "contactEmail": "finaltestevent@testevent.com",
+      "eventName": "Final Test Celebration",
+      "eventType": "Other",
+      "startDate": "2026-03-29T04:00:00.000Z",
+      "endDate": "2026-03-19T04:00:00.000Z",
+      "guestEstimate": "95",
+      "eventDescription": "- scheduled dates showing greyed out\n- guest estimate cannot exceed 100\n- form looks good\n- trying with end date selected before start date ",
+      "notes": "",
+      "depositPaid": false,
+      "id": "UaQmLdLsitM"
+    },
+    {
+      "hostName": "Final Test 2",
+      "contactEmail": "finaltestevent@testevent.com",
+      "eventName": "Final Test Celebration 2.0",
+      "eventType": "Other",
+      "startDate": "2026-03-29T04:00:00.000Z",
+      "endDate": "2026-03-29T04:00:00.000Z",
+      "guestEstimate": "95",
+      "eventDescription": "- testing that everything works before submitting\n- added end date validator to prevent choosing end date before start date\n- guest estimate working nicely ",
+      "notes": "",
+      "depositPaid": false,
+      "id": "XqJNJx8HwjQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
