@@ -1,0 +1,57 @@
+{
+  "events": [
+    {
+      "hostName": "Usagi Tsukino",
+      "contactEmail": "sailormoon@sailorsenshi.com",
+      "eventName": "Friendship Celebration",
+      "eventType": "Tea Party",
+      "startDate": "2026-03-30T04:00:00.000Z",
+      "endDate": "2026-03-30T04:00:00.000Z",
+      "guestEstimate": "10",
+      "eventDescription": "A day to celebrate the beautiful friendship we have found during this magical journey. \n\n* Come as the princess you were born to be!",
+      "notes": "- elegant but youthful\n- planet themed snacks\n- maybe a cute but easy craft they can do together and keep as to always remember this special moment",
+      "depositPaid": true,
+      "id": "hgLqHOzpxdE"
+    },
+    {
+      "hostName": "Briar Rose",
+      "contactEmail": "floralgrace@princessmail.com",
+      "eventName": "Thank You Party",
+      "eventType": "Other",
+      "startDate": "2026-03-31T04:00:00.000Z",
+      "endDate": "2026-03-31T04:00:00.000Z",
+      "guestEstimate": "6",
+      "eventDescription": " A party to thank everyone for helping me!",
+      "notes": "- lots of florals\n- fairy lights\n- pink and blue cake",
+      "depositPaid": true,
+      "id": "S1l9ZaZHK1o"
+    },
+    {
+      "hostName": "MintBanshee",
+      "contactEmail": "mintbanshee@mailme.com",
+      "eventName": "A Breath of Fresh Air",
+      "eventType": "Vendor Market",
+      "startDate": "2026-04-04T04:00:00.000Z",
+      "endDate": "2026-04-05T04:00:00.000Z",
+      "guestEstimate": "100",
+      "eventDescription": "A vendor event for small handmade businesses. \n\nCelebrate nature, plants, pollinators, trees, etc. with themed creations. Jewelry, polymer clay, embroidery, beaded decor, resin art and more! ",
+      "notes": "- 5 vendors\n- we do tables and tents\n- decorate tables and tents for the theme\n- fairy lights above\n- a side table to purchase pollinator plants and air purifying houseplants ",
+      "depositPaid": true,
+      "id": "-SrdkHmHcRA"
+    },
+    {
+      "hostName": "Etsy Canada",
+      "contactEmail": "etsycanada@etsy.com",
+      "eventName": "Spring Market",
+      "eventType": "Vendor Market",
+      "startDate": "2026-04-10T04:00:00.000Z",
+      "endDate": "2026-04-12T04:00:00.000Z",
+      "guestEstimate": "100",
+      "eventDescription": "Various vendors coming together to peddle their wares! \n\nBring in spring with a fun outing full of handmade creations! Mother's Day is around the corner and we have no doubts that the perfect something will be here waiting for you!",
+      "notes": "- we set up tables and tents\n- simple spring decorations\n- night market, put up the fairy lights",
+      "depositPaid": false,
+      "id": "jfqEdDC0XuM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

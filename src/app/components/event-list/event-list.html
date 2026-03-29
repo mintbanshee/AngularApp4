@@ -1,0 +1,37 @@
+<div class="dashboard">
+      <div class="headerIMG">
+        <img src="/images/Bloomspace.png" alt="Logo and Slogan Image">
+      </div>
+      <h1>Welcome Boss!</h1>
+      <h3>Here is what is blooming in your garden:</h3>
+
+      <p *ngIf="loading">Loading events...</p>
+
+    <div *ngIf="!loading && events.length === 0">
+      <p>No events scheduled.</p>
+    </div>
+
+  <div class="dashboardGrid">
+
+    
+
+    <mat-card *ngFor="let event of events" class="event-card">
+      <mat-card-header>{{ event.eventName }}</mat-card-header>
+      <mat-card-content>
+        <p><strong>Host: </strong>{{ event.hostName }}</p>
+        <p><strong>Contact: </strong>{{ event.contactEmail }}</p>
+        <p><strong>Event Type: </strong>{{ event.eventType }}</p>
+        <p><strong>Start Date: </strong>{{ event.startDate | date }}</p>
+        <p><strong>End Date: </strong>{{ event.endDate | date }}</p>
+        <p><strong>Guest Estimate: </strong>{{ event.guestEstimate }}</p>
+        <p><strong>Description: </strong>{{ event.eventDescription }}</p>
+        <p><strong>Staff Notes: </strong>{{ event.notes }}</p>
+        <p><strong>Deposit:</strong>
+          <span [class.paid]="event.depositPaid === true" [class.pending]="event.depositPaid !== true">
+            {{ event.depositPaid === true ? 'Paid' : 'Pending' }}
+          </span>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>  
+</div>

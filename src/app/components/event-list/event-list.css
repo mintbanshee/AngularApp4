@@ -1,0 +1,56 @@
+.dashboard {
+  background: url('/images/FloralBG.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.dashboard h1 {
+  margin-top: 0;
+  font-size: 3rem;
+  color: #fff;
+  padding: 1.5rem 1.5rem 0;
+}
+mat-card {
+  margin: 10px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #6c936f;
+}
+mat-card-header {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+mat-card-content {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
+  margin: 1rem auto;
+}
+.paid {
+  color: #4f7c57;
+  font-weight: 600;
+}
+.pending {
+  color: #b26a4a;
+  font-weight: 600;
+}
+.headerIMG img {
+  width: auto;
+  height: 250px;
+  border-radius: 16px;
+  margin-top: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}

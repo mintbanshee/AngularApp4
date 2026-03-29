@@ -1,0 +1,148 @@
+
+<div class="eventFormDiv">
+
+<mat-card class="formCard">
+  <mat-card-header>
+    <mat-card-title>Schedule a Client Event</mat-card-title>
+    <mat-card-subtitle>Plan and organize events for Bloomspace</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="eventForm">
+    
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Host Name</mat-label>
+      <input matInput 
+        formControlName="hostName" 
+        name="hostName" id="hostName" 
+        placeholder="Enter event host's name"
+        aria-label="Host Name" 
+      />
+      <mat-error *ngIf="f['hostName'].touched && f['hostName'].hasError('required')">Host Name is required</mat-error>
+      <mat-error *ngIf="f['hostName'].touched && f['hostName'].hasError('minlength')">Host Name must be at least 3 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contact Email</mat-label>
+      <input matInput 
+        formControlName="contactEmail" 
+        name="contactEmail" id="contactEmail" 
+        placeholder="Enter contact email" 
+        aria-label="Contact Email"
+      />
+      <mat-error *ngIf="f['contactEmail'].touched && f['contactEmail'].hasError('required')">Contact Email is required</mat-error>
+      <mat-error *ngIf="f['contactEmail'].touched && f['contactEmail'].hasError('email')">Please enter a valid email address</mat-error> 
+    </mat-form-field>
+
+     <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Event Name</mat-label>
+      <input matInput 
+        formControlName="eventName" 
+        name="eventName" id="eventName" 
+        placeholder="Enter event name" 
+        aria-label="Event Name"
+      />
+      <mat-error *ngIf="f['eventName'].touched && f['eventName'].hasError('required')">Event Name is required</mat-error>
+      <mat-error *ngIf="f['eventName'].touched && f['eventName'].hasError('minlength')">Event Name must be at least 3 characters</mat-error>
+    </mat-form-field>   
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Type of Event</mat-label>
+      <mat-select 
+        formControlName="eventType" 
+        name="eventType" id="eventType" 
+        placeholder="Select event type"
+        aria-label="Type of Event">
+      <mat-option *ngFor="let type of eventTypes" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="f['eventType'].touched && f['eventType'].hasError('required')">Event Type is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Start Date</mat-label>
+      <input matInput 
+        [matDatepicker]="startPicker" 
+        formControlName="startDate"
+        [matDatepickerFilter]="dateFilter" 
+        name="startDate" 
+        id="startDate" 
+        placeholder="Choose start date" 
+        aria-label="Start Date"
+      />
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+      <mat-error *ngIf="f['startDate'].touched && f['startDate'].hasError('required')">Start Date is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>End Date</mat-label>
+      <input matInput 
+        [matDatepicker]="endPicker" 
+        formControlName="endDate" 
+        [matDatepickerFilter]="dateFilter" 
+        name="endDate" 
+        id="endDate" 
+        placeholder="Choose end date" 
+        aria-label="End Date"
+      />
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+      <mat-error *ngIf="f['endDate'].touched && f['endDate'].hasError('required')">End Date is required</mat-error>
+    </mat-form-field>
+
+    <div class="group-error" *ngIf="eventForm.hasError('invalidDateRange') && eventForm.touched">
+      End date must be same day or after start date.
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput rows="5" 
+          formControlName="eventDescription" 
+          name="eventDescription" id="eventDescription" 
+          placeholder="Enter event description" 
+          aria-label="Event Description">
+      </textarea>
+      <mat-error *ngIf="f['eventDescription'].touched && f['eventDescription'].hasError('required')">Description is required</mat-error>
+      <mat-error *ngIf="f['eventDescription'].touched && f['eventDescription'].hasError('minlength')">Description must be at least 10 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Staff Notes:</mat-label>
+      <textarea matInput rows="5" 
+        formControlName="notes" 
+        name="notes" id="notes" 
+        placeholder="Enter any notes" 
+        aria-label="Staff Notes">
+      </textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Guest Estimate</mat-label>
+      <input matInput 
+        formControlName="guestEstimate" 
+        name="guestEstimate" id="guestEstimate" 
+        placeholder="Enter estimated number of guests" 
+        aria-label="Guest Estimate"
+      />
+      <mat-error *ngIf="f['guestEstimate'].touched && f['guestEstimate'].hasError('required')">Guest Estimate is required</mat-error>
+      <mat-error *ngIf="f['guestEstimate'].touched && f['guestEstimate'].hasError('min')">Guest Estimate must be at least 4</mat-error>
+      <mat-error *ngIf="f['guestEstimate'].touched && f['guestEstimate'].hasError('guestCapacityExceeded')">Guest Estimate exceeds venue capacity</mat-error>
+    </mat-form-field>    
+
+    <mat-checkbox 
+      formControlName="depositPaid" 
+      name="depositPaid" 
+      id="depositPaid"
+      aria-label="Deposit Paid">
+        Deposit Paid
+      </mat-checkbox>
+
+    <div class="buttonRow">
+    <button mat-raised-button color="primary" type="submit" [disabled]="submitting">
+        {{ submitting ? 'Submitting...' : 'Schedule Event' }}
+      </button>
+    </div>
+  </form>
+  </mat-card-content>
+</mat-card>
+</div>

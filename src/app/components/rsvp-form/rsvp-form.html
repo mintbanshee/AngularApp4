@@ -1,0 +1,85 @@
+<div class="RSVP">
+
+  <div class="rsvpContainer">
+    <mat-card class="rsvpCard">
+      <mat-card-title>Please RSVP to our event</mat-card-title>
+  <form #rsvpForm="ngForm" (ngSubmit)="submitRsvp(rsvpForm)">
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Full Name:</mat-label>
+      <input matInput 
+        name="name" 
+        [(ngModel)]="rsvp.name" 
+        required
+        #name="ngModel"
+      />
+      <mat-error *ngIf="name.invalid && name.touched">
+        Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email:</mat-label>
+      <input matInput 
+        name="email" 
+        [(ngModel)]="rsvp.email" 
+        required
+        email
+        #emailField="ngModel"
+      />
+      <mat-error *ngIf="emailField.errors?.['required'] && emailField.touched">
+        Email is required.
+      </mat-error>
+      <mat-error *ngIf="emailField.errors?.['email'] && emailField.touched">
+        Please enter a valid email address.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Will you attend?</mat-label>
+      <mat-select 
+        name="attendance" 
+        [(ngModel)]="rsvp.attending" 
+        required
+        #attendingField="ngModel">
+        <mat-option value="yes">Yes</mat-option>
+        <mat-option value="no">No</mat-option>
+      </mat-select>
+      <mat-error *ngIf="attendingField.invalid && attendingField.touched">
+        Please select your attendance status.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Will you be bringing a plus one?</mat-label>
+      <mat-select 
+        name="plusOne" 
+        [(ngModel)]="rsvp.plusOne" 
+        required
+        #plusOneField="ngModel">
+        <mat-option value="yes">Yes</mat-option>
+        <mat-option value="no">No</mat-option>
+      </mat-select>
+      <mat-error *ngIf="plusOneField.invalid && plusOneField.touched">
+        Please select your plus one status.
+      </mat-error>
+    </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Message</mat-label>
+      <textarea
+        matInput
+        name="message"
+        [(ngModel)]="rsvp.message"
+        rows="4">
+      </textarea>
+    </mat-form-field>
+
+    <div class="buttonRow">
+    <button mat-raised-button color="primary" type="submit" [disabled]="rsvpForm.invalid">
+      Submit RSVP
+    </button>
+    </div>
+  </form>
+  </mat-card>
+  </div>

@@ -1,0 +1,62 @@
+.eventFormDiv {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-image: url('/images/BloomspaceBG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.formCard {
+  width: 100%;
+  max-width: 1100px;
+  max-height: 85vh;
+  padding: 1rem;
+  background: rgba(250, 255, 250, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.eventForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.full-width {
+  width: 100%;
+}
+.description-field,
+.notes-field {
+  grid-column: span 2;
+}
+.checkbox-row,
+.button-row,
+.group-error {
+  grid-column: 1 / -1;
+}
+mat-card-title {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+mat-card-subtitle {
+  margin-top: 0.25rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.buttonRow {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.buttonRow button {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background: #6c936f;
+  color: #fff;
+  border: 2px solid #000;
+  height: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
